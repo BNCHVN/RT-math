@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RT-math — Trò chơi Toán</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h1>RT-math</h1>
+      <p class="tagline">RT-math HIỆN ĐÃ RA MẮT — đang trong giai đoạn thử nghiệm</p>
+    </header>
+
+    <section id="hud">
+      <div class="left">
+        <div class="panel">
+          <div class="label">Điểm</div>
+          <div id="score">0</div>
+        </div>
+
+        <div class="panel">
+          <div class="label">Thanh điểm</div>
+          <div id="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="panel">
+          <div class="label">Thời gian còn lại</div>
+          <div id="timer">15.0s</div>
+        </div>
+
+        <div class="panel stats">
+          <div class="label">Tổng thời gian dùng</div>
+          <div id="totalTime">0.00s</div>
+          <div class="label">Trung bình / câu</div>
+          <div id="avgTime">0.00s</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="game">
+      <div id="questionBox" class="panel">
+        <div id="question" class="question">Nhấn Bắt đầu để chơi</div>
+      </div>
+
+      <div id="inputRow">
+        <input id="answerInput" type="number" inputmode="numeric" placeholder="Nhập đáp án..." />
+        <button id="submitBtn">Xác nhận</button>
+        <button id="skipBtn">Bỏ qua</button>
+      </div>
+
+      <div id="message" class="panel hidden"></div>
+
+      <div id="controls" class="panel">
+        <div>
+          <label>Thời gian / câu:</label>
+          <select id="timePerQ">
+            <option value="10">10s</option>
+            <option value="12">12s</option>
+            <option value="15" selected>15s</option>
+            <option value="20">20s</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Mục tiêu điểm:</label>
+          <input id="targetScore" type="number" value="100" min="10" step="10" style="width:90px" />
+        </div>
+
+        <div class="buttons">
+          <button id="startBtn">Bắt đầu</button>
+          <button id="restartBtn" class="muted">Chơi lại</button>
+        </div>
+      </div>
+
+      <footer class="panel small">Phím tắt: Enter = gửi, Space = bỏ qua</footer>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
